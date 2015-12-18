@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <div class="row">
+    <div class="col-xs-2">
+      <ngsvg src="'images/' + chosenStop.id.charAt(0) + 'l.svg'"></ngsvg>
+    </div>
+    <div class="col-xs-8">
+      <h3> {{ chosenStop.name }} </h3>
+    </div>
+  </div>
+</div>
+<div class="modal-body">
+  <div ng-include="chosenStop.content">
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary col-xs-4" type="button" ng-click="ok()">OK</button>
+  <button class="btn btn-warning col-xs-4" type="button" ng-click="cancel()">Cancel</button>
+</div>

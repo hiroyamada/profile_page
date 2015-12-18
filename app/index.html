@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body onload="documentLoaded()" ng-app="profileAngularApp" ng-controller="MainCtrl">
+    <!--
+      <div id="load-cover">
+      </div>
+    -->
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <!-- Add your site or application content here -->
+      <!--
+        <div class="header">
+        <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+        <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/">profileAngular</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+        <li class="active"><a href="#/">Home</a></li>
+        <li><a ng-href="#/about">About</a></li>
+        <li><a ng-href="#/">Contact</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+      -->
+      <div class="header fadeInElement">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <object type="image/svg+xml" data="images/y_logo.svg" id="y_logo"></object>
+            </div>
+            <div class="col-md-6 link-buttons">
+              <a href="https://www.linkedin.com/in/hirohisa-yamada-a11975a4" target="_blank" class="btn btn-default">
+                <i class="fa fa-linkedin fa-4x"></i>
+              </a>
+              <a href="https://github.com/yak123soba/" class="btn btn-default" target="_blank">
+                <i class="fa fa-github fa-4x"></i>
+              </a>
+              <a href="/resume.pdf/" class="btn btn-default" target="_blank">
+                <i class="fa fa-file fa-4x"></i>
+              </a>
+              <a href="mailto:yak123soba@gmail.com" class="btn btn-default" target="_blank">
+                <i class="fa fa-envelope fa-4x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container fadeInElement" id="mainContent">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+              <div ng-repeat="line in lines" class="panel panel-default">
+                <div class="panel-heading" ng-mouseover="focusLine(line)" ng-mouseleave="focusAll()" role="tab" id="heading_{{ line.name }}">
+                  <div class="panel-heading-inside">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" ng-href="#{{line.alias}}_collapse" aria-expanded="false" aria-controls="{{line.alias}}_collapse">
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <ngsvg id="subway" src="'images/' + line.alias + 'l.svg'"></ngsvg>
+                          </div>
+                          <div class="col-xs-8">
+                            <h4> {{ line.name }} </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                </div>
+                <div class="panel-collapse collapse" role="tabpanel" id="{{line.alias}}_collapse">
+                  <a ng-click="showDetails(stop)" ng-mouseover="focusStop(stop)" ng-mouseleave="focusAll()" ng-repeat="stop in line.stops" class="list-group-item">
+                    <h5>{{ stop.name }}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--            <ul class="list-group">
+              <a ng-mouseover="focusLine(line)" ng-mouseleave="focusAll()" ng-repeat="line in lines" class="list-group-item">
+              <div class="row">
+              <div class="col-xs-4">
+              <ngsvg src="'images/' + line.alias + 'l.svg'"></ngsvg>
+              </div>
+              <div class="col-xs-8">
+              <h4> {{ line.name }} </h4>
+              </div>
+              </div>
+              </a>
+              </ul>
+            -->
+          </div>
+          <div class="col-sm-8">
+            <object type="image/svg+xml" data="images/boston_t.svg" id="subway"></object>
+          </div>
+
+        </div>
+
+        <!--        <div ng-view=""></div> -->
+      </div>
+
+      <div class="footer">
+        <div class="container">
+        </div>
+      </div>
+
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script>
+!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+  (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+  r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+}(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
+      </script>
+
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <script src="bower_components/underscore/underscore.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/controllers/main.js"></script>
+      <script src="scripts/controllers/about.js"></script>
+      <script src="scripts/directives/ngsvg.js"></script>
+      <script src="scripts/controllers/stopdetail.js"></script>
+      <!-- endbuild -->
+  </body>
+</html>

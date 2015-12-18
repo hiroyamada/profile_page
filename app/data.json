@@ -1,0 +1,89 @@
+{
+  "lines": [{
+    "name": "Work Experience Line",
+    "alias": "w",
+    "stops": [{
+      "id": "w01",
+      "name": "Palantir Technologies",
+      "content": "views/palantir.html"
+    }, {
+      "id": "w02",
+      "name": "Google",
+      "content": "views/google.html"
+    }, {
+      "id": "w03",
+      "name": "Harvard",
+      "content": "views/harvard_job.html"
+    }, {
+      "id": "w04",
+      "name": "Collabo-School",
+      "content": "views/collabo.html"
+    }, {
+      "id": "w05",
+      "name": "Modit",
+      "content": "views/modit.html"
+    }, {
+      "id": "w06",
+      "name": "Rover",
+      "content": "views/rover.html"
+    }]
+  }, {
+    "name": "Education Line",
+    "alias": "e",
+    "stops": [{
+      "id": "e01",
+      "name": "Harvard"
+    }, {
+      "id": "e02",
+      "name": "Ecole Polytechnique"
+    }, {
+      "id": "e03",
+      "name": "University of Tokyo"
+    }, {
+      "id": "e04",
+      "name": "American School of Paris"
+    }, {
+      "id": "e05",
+      "name": "Azabu High School"
+    }]
+  }, {
+    "name": "Project Line",
+    "alias": "p",
+    "stops": [{
+      "id": "p01",
+      "name": "PraxSpots"
+    }, {
+      "id": "p02",
+      "name": "Adaptive Burrows-Wheeler"
+    }, {
+      "id": "p03",
+      "name": "gaku"
+    }, {
+      "id": "p04",
+      "name": "CollaboGUI"
+    }]
+  }, {
+    "name": "Language Line",
+    "alias": "l",
+    "stops": [{
+      "id": "l01",
+      "name": "Japanese"
+    }, {
+      "id": "l02",
+      "name": "French"
+    }, {
+      "id": "l03",
+      "name": "English"
+    }]
+  }, {
+    "name": "Hobby Line",
+    "alias": "h",
+    "stops": [{
+      "id": "h01",
+      "name": "Breakdance"
+    }, {
+      "id": "h02",
+      "name": "Swimming"
+    }]
+  }]
+}
